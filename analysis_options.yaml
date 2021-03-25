@@ -1,0 +1,11 @@
+include: package:effective_dart/analysis_options.yaml
+linter:
+  rules:
+    public_member_api_docs: false
+    lines_longer_than_80_chars: false
+    avoid_equals_and_hash_code_on_mutable_classes: false
+    prefer_relative_imports: false
+    avoid_catches_without_on_clauses: false
+    type_annotate_public_apis: false
+    avoid_types_on_closure_parameters: false
+    prefer_const_constructors: true

@@ -1,0 +1,17 @@
+{
+	"authEnter": "Вход",
+	"authEnterPhoneNumber": "Введите номер телефона",
+	"authEnterVerificationCode": "Введите СМС-код",
+	"authErrorAccountAlreadyExists": "Пользователь с таким адресом электронной почты уже существует",
+	"authErrorAppNotAuthorized": "Приложение не авторизовано (из эмулятора доступны только тестовые номера)",
+	"authErrorGeneral": "Что-то пошло не так, попробуйте снова",
+	"authErrorInvalidVerificationCode": "Неверный СМС-код",
+	"authErrorOperationNotAllowed": "Этот тип авторизации отключен",
+	"authErrorPhoneNumber": "Неверный номер телефона",
+	"authErrorUserDisabled": "Пользователь заблокирован",
+	"authErrorUserNotFound": "Пользователь не существует",
+	"authErrorWrongPassword": "Неверный пароль",
+	"errorGeneral": "Что-то пошло не так :-(",
+	"goBack": "Назад",
+	"goNext": "Далее"
+}
