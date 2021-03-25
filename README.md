@@ -1,4 +1,4 @@
-# Firebase_Interaction_Sample
+### Firebase_Interaction_Sample
 
 1. Create Firebase project
 2. Add firebase_auth and firebase_core
