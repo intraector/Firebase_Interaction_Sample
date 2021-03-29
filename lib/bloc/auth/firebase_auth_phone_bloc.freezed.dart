@@ -26,6 +26,11 @@ class _$StateFirebaseAuthPhoneBlocTearOff {
   }
 
 // ignore: unused_element
+  _Authorized authorized() {
+    return const _Authorized();
+  }
+
+// ignore: unused_element
   _Sms sms({@required String smsCode, @required String phoneNumber}) {
     return _Sms(
       smsCode: smsCode,
@@ -58,6 +63,7 @@ mixin _$StateFirebaseAuthPhoneBloc {
   TResult when<TResult extends Object>({
     @required TResult phone(String phoneNumber),
     @required TResult loadInProgress(),
+    @required TResult authorized(),
     @required TResult sms(String smsCode, String phoneNumber),
     @required
         TResult error(String msg, ErrorBtnAction action, String smsCode,
@@ -67,6 +73,7 @@ mixin _$StateFirebaseAuthPhoneBloc {
   TResult maybeWhen<TResult extends Object>({
     TResult phone(String phoneNumber),
     TResult loadInProgress(),
+    TResult authorized(),
     TResult sms(String smsCode, String phoneNumber),
     TResult error(
         String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
@@ -76,6 +83,7 @@ mixin _$StateFirebaseAuthPhoneBloc {
   TResult map<TResult extends Object>({
     @required TResult phone(_Phone value),
     @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
     @required TResult sms(_Sms value),
     @required TResult error(_Error value),
   });
@@ -83,6 +91,7 @@ mixin _$StateFirebaseAuthPhoneBloc {
   TResult maybeMap<TResult extends Object>({
     TResult phone(_Phone value),
     TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
     TResult sms(_Sms value),
     TResult error(_Error value),
     @required TResult orElse(),
@@ -168,6 +177,7 @@ class _$_Phone implements _Phone {
   TResult when<TResult extends Object>({
     @required TResult phone(String phoneNumber),
     @required TResult loadInProgress(),
+    @required TResult authorized(),
     @required TResult sms(String smsCode, String phoneNumber),
     @required
         TResult error(String msg, ErrorBtnAction action, String smsCode,
@@ -175,6 +185,7 @@ class _$_Phone implements _Phone {
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return phone(phoneNumber);
@@ -185,6 +196,7 @@ class _$_Phone implements _Phone {
   TResult maybeWhen<TResult extends Object>({
     TResult phone(String phoneNumber),
     TResult loadInProgress(),
+    TResult authorized(),
     TResult sms(String smsCode, String phoneNumber),
     TResult error(
         String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
@@ -202,11 +214,13 @@ class _$_Phone implements _Phone {
   TResult map<TResult extends Object>({
     @required TResult phone(_Phone value),
     @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
     @required TResult sms(_Sms value),
     @required TResult error(_Error value),
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return phone(this);
@@ -217,6 +231,7 @@ class _$_Phone implements _Phone {
   TResult maybeMap<TResult extends Object>({
     TResult phone(_Phone value),
     TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
     TResult sms(_Sms value),
     TResult error(_Error value),
     @required TResult orElse(),
@@ -278,6 +293,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object>({
     @required TResult phone(String phoneNumber),
     @required TResult loadInProgress(),
+    @required TResult authorized(),
     @required TResult sms(String smsCode, String phoneNumber),
     @required
         TResult error(String msg, ErrorBtnAction action, String smsCode,
@@ -285,6 +301,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return loadInProgress();
@@ -295,6 +312,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object>({
     TResult phone(String phoneNumber),
     TResult loadInProgress(),
+    TResult authorized(),
     TResult sms(String smsCode, String phoneNumber),
     TResult error(
         String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
@@ -312,11 +330,13 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult map<TResult extends Object>({
     @required TResult phone(_Phone value),
     @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
     @required TResult sms(_Sms value),
     @required TResult error(_Error value),
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return loadInProgress(this);
@@ -327,6 +347,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeMap<TResult extends Object>({
     TResult phone(_Phone value),
     TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
     TResult sms(_Sms value),
     TResult error(_Error value),
     @required TResult orElse(),
@@ -341,6 +362,118 @@ class _$_LoadInProgress implements _LoadInProgress {
 
 abstract class _LoadInProgress implements StateFirebaseAuthPhoneBloc {
   const factory _LoadInProgress() = _$_LoadInProgress;
+}
+
+/// @nodoc
+abstract class _$AuthorizedCopyWith<$Res> {
+  factory _$AuthorizedCopyWith(
+          _Authorized value, $Res Function(_Authorized) then) =
+      __$AuthorizedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$AuthorizedCopyWithImpl<$Res>
+    extends _$StateFirebaseAuthPhoneBlocCopyWithImpl<$Res>
+    implements _$AuthorizedCopyWith<$Res> {
+  __$AuthorizedCopyWithImpl(
+      _Authorized _value, $Res Function(_Authorized) _then)
+      : super(_value, (v) => _then(v as _Authorized));
+
+  @override
+  _Authorized get _value => super._value as _Authorized;
+}
+
+/// @nodoc
+class _$_Authorized implements _Authorized {
+  const _$_Authorized();
+
+  @override
+  String toString() {
+    return 'StateFirebaseAuthPhoneBloc.authorized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Authorized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult phone(String phoneNumber),
+    @required TResult loadInProgress(),
+    @required TResult authorized(),
+    @required TResult sms(String smsCode, String phoneNumber),
+    @required
+        TResult error(String msg, ErrorBtnAction action, String smsCode,
+            String phoneNumber),
+  }) {
+    assert(phone != null);
+    assert(loadInProgress != null);
+    assert(authorized != null);
+    assert(sms != null);
+    assert(error != null);
+    return authorized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult phone(String phoneNumber),
+    TResult loadInProgress(),
+    TResult authorized(),
+    TResult sms(String smsCode, String phoneNumber),
+    TResult error(
+        String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (authorized != null) {
+      return authorized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult phone(_Phone value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
+    @required TResult sms(_Sms value),
+    @required TResult error(_Error value),
+  }) {
+    assert(phone != null);
+    assert(loadInProgress != null);
+    assert(authorized != null);
+    assert(sms != null);
+    assert(error != null);
+    return authorized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult phone(_Phone value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
+    TResult sms(_Sms value),
+    TResult error(_Error value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (authorized != null) {
+      return authorized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Authorized implements StateFirebaseAuthPhoneBloc {
+  const factory _Authorized() = _$_Authorized;
 }
 
 /// @nodoc
@@ -417,6 +550,7 @@ class _$_Sms implements _Sms {
   TResult when<TResult extends Object>({
     @required TResult phone(String phoneNumber),
     @required TResult loadInProgress(),
+    @required TResult authorized(),
     @required TResult sms(String smsCode, String phoneNumber),
     @required
         TResult error(String msg, ErrorBtnAction action, String smsCode,
@@ -424,6 +558,7 @@ class _$_Sms implements _Sms {
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return sms(smsCode, phoneNumber);
@@ -434,6 +569,7 @@ class _$_Sms implements _Sms {
   TResult maybeWhen<TResult extends Object>({
     TResult phone(String phoneNumber),
     TResult loadInProgress(),
+    TResult authorized(),
     TResult sms(String smsCode, String phoneNumber),
     TResult error(
         String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
@@ -451,11 +587,13 @@ class _$_Sms implements _Sms {
   TResult map<TResult extends Object>({
     @required TResult phone(_Phone value),
     @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
     @required TResult sms(_Sms value),
     @required TResult error(_Error value),
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return sms(this);
@@ -466,6 +604,7 @@ class _$_Sms implements _Sms {
   TResult maybeMap<TResult extends Object>({
     TResult phone(_Phone value),
     TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
     TResult sms(_Sms value),
     TResult error(_Error value),
     @required TResult orElse(),
@@ -585,6 +724,7 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object>({
     @required TResult phone(String phoneNumber),
     @required TResult loadInProgress(),
+    @required TResult authorized(),
     @required TResult sms(String smsCode, String phoneNumber),
     @required
         TResult error(String msg, ErrorBtnAction action, String smsCode,
@@ -592,6 +732,7 @@ class _$_Error implements _Error {
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return error(msg, action, smsCode, phoneNumber);
@@ -602,6 +743,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object>({
     TResult phone(String phoneNumber),
     TResult loadInProgress(),
+    TResult authorized(),
     TResult sms(String smsCode, String phoneNumber),
     TResult error(
         String msg, ErrorBtnAction action, String smsCode, String phoneNumber),
@@ -619,11 +761,13 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object>({
     @required TResult phone(_Phone value),
     @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult authorized(_Authorized value),
     @required TResult sms(_Sms value),
     @required TResult error(_Error value),
   }) {
     assert(phone != null);
     assert(loadInProgress != null);
+    assert(authorized != null);
     assert(sms != null);
     assert(error != null);
     return error(this);
@@ -634,6 +778,7 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object>({
     TResult phone(_Phone value),
     TResult loadInProgress(_LoadInProgress value),
+    TResult authorized(_Authorized value),
     TResult sms(_Sms value),
     TResult error(_Error value),
     @required TResult orElse(),

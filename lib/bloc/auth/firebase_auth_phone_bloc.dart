@@ -99,7 +99,7 @@ class FirebaseAuthPhoneBloc extends Bloc<EventFirebaseAuthPhoneBloc, StateFireba
     try {
       await FirebaseAuth.instance.signInWithCredential(_credential);
       //TODO proceed after successful sign in
-
+      yield const StateFirebaseAuthPhoneBloc.authorized();
     } on FirebaseAuthException catch (error) {
       _credential = null;
       _logger.i("Error in $runtimeType | ${error.code} ${error.message}", error);
@@ -163,6 +163,7 @@ class FirebaseAuthPhoneBloc extends Bloc<EventFirebaseAuthPhoneBloc, StateFireba
 abstract class StateFirebaseAuthPhoneBloc with _$StateFirebaseAuthPhoneBloc {
   const factory StateFirebaseAuthPhoneBloc.phone(String phoneNumber) = _Phone;
   const factory StateFirebaseAuthPhoneBloc.loadInProgress() = _LoadInProgress;
+  const factory StateFirebaseAuthPhoneBloc.authorized() = _Authorized;
   const factory StateFirebaseAuthPhoneBloc.sms({
     @required String smsCode,
     @required String phoneNumber,

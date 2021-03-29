@@ -68,7 +68,7 @@ class _AreaPhoneState extends State<AreaPhone> {
                 children: [
                   Flexible(
                     child: Text(
-                      S.of(context).authEnter,
+                      S.current.authEnter,
                       style: Theme.of(context).textTheme.subtitle2.copyWith(
                             fontSize: 16.0,
                           ),

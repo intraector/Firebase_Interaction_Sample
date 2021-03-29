@@ -1,4 +1,5 @@
 import 'package:Firebase_Interaction_Sample/bloc/auth/firebase_auth_phone_bloc.dart';
+import 'package:Firebase_Interaction_Sample/ui/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,8 +29,20 @@ class AuthScreen extends StatelessWidget {
                       size: MediaQuery.of(context).size.width / 5.5,
                     ),
                   ),
-                  BlocBuilder<FirebaseAuthPhoneBloc, StateFirebaseAuthPhoneBloc>(
+                  BlocConsumer<FirebaseAuthPhoneBloc, StateFirebaseAuthPhoneBloc>(
+                    listener: (context, state) {
+                      if (state == const StateFirebaseAuthPhoneBloc.authorized()) {
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()),
+                            (_) => false,
+                          );
+                        });
+                      }
+                    },
                     builder: (context, state) {
+                      print('---------- $state');
                       return AnimatedSwitcher(
                         duration: const Duration(milliseconds: 300),
                         child: state.map(
@@ -47,6 +60,7 @@ class AuthScreen extends StatelessWidget {
                             phoneNumber: state.phoneNumber,
                             smsCode: state.smsCode,
                           ),
+                          authorized: (_) => const SizedBox.shrink(),
                         ),
                       );
                     },
