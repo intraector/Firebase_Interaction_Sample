@@ -42,7 +42,6 @@ class AuthScreen extends StatelessWidget {
                       }
                     },
                     builder: (context, state) {
-                      print('---------- $state');
                       return AnimatedSwitcher(
                         duration: const Duration(milliseconds: 300),
                         child: state.map(
