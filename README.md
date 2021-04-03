@@ -46,3 +46,8 @@
           implementation 'com.android.support:multidex:1.0.3'
         }
      ```
+10. iOS setup: add app to project in Firebase Console
+11. Download `GoogleService-Info.plist` and place it in XCode to to Runner -> Runner (next to `Info.plist`)
+12. Set the `MinimumOSversion` to 10.0 in ios/Flutter/AppFrameworkInfo.plist
+13. In Xcode, ensure that the iOS deployment target at Runner -> Project -> Runner -> Build Settings -> Basic -> Deployment -> IOS Deployment Target is set to 10.0
+14. 
