@@ -49,5 +49,22 @@
 10. iOS setup: add app to project in Firebase Console
 11. Download `GoogleService-Info.plist` and place it in XCode to to Runner -> Runner (next to `Info.plist`)
 12. Set the `MinimumOSversion` to 10.0 in ios/Flutter/AppFrameworkInfo.plist
-13. In Xcode, ensure that the iOS deployment target at Runner -> Project -> Runner -> Build Settings -> Basic -> Deployment -> IOS Deployment Target is set to 10.0
-14. 
+13. In Xcode, ensure that at Runner -> Project -> Runner -> Build Settings -> Basic -> Deployment -> iOS Deployment Target is set to 10.0
+14. In Xcode, ensure that at Runner -> Targets -> Runner -> Build Settings -> Basic -> Deployment -> iOS Deployment Target is set to 10.0
+15. In Xcode, ensure that at Runner -> Targets -> Runner -> General -> Deployment Info ios is set to 10.0
+16. in Podfile: uncomment the line `platform :ios, '10.0'`
+17. in Podfile: ensure that it contains the following post install script:
+    ```
+     post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        flutter_additional_ios_build_settings(target)
+        target.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+        end
+      end
+    end
+    ```
+18. in Podfile: add theis line to the end of the file to speed up build:
+    `pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '6.26.0'`
+    it's from [here](https://firebase.flutter.dev/docs/overview#improve-ios-build-times)
+
