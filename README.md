@@ -65,6 +65,16 @@
     end
     ```
 18. in Podfile: add theis line to the end of the file to speed up build:
-    `pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '6.26.0'`
+    ```
+    pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '6.26.0'
+    ```
     it's from [here](https://firebase.flutter.dev/docs/overview#improve-ios-build-times)
+19. run 
+    ```
+    flutter clean \
+        && rm ios/Podfile.lock pubspec.lock \
+        && rm -rf ios/Pods ios/Runner.xcworkspace
+    ```
+20. run `flutter pub get`
+21. from within `/ios` run `pod install`
 
