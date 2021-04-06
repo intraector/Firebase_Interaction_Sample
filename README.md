@@ -25,7 +25,6 @@
 9b. *Optional:* to enable **multidex** support
 
     * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
-    * 
     ```
       buildscript {
       dependencies {
@@ -36,13 +35,11 @@
     ```
     
     * execute the plugin by adding the following underneath the line apply plugin: `com.android.application`, within the `/android/app/build.gradle` file:
-    * 
     ```
     apply plugin: 'com.google.gms.google-services'
     ```
     
     * open the `/android/app/build.gradle` file. Under `dependencies` add the multidex module, and enable it within the defaultConfig:
-    * 
     ```
      android {
             defaultConfig {
