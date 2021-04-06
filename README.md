@@ -14,13 +14,13 @@
 6. Insert the keys in project settings in Firebase Console
 7. Download `google-services.json` and place it to `/android/app/`
 8. Add `classpath 'com.google.gms:google-services:4.3.5'` to `/android/build.gradle` dependencies
-9. *Optional*: to remove captcha
+9a. *Optional*: to remove captcha
     * enable the Android Device Verification API on google cloud console (left menu --> APIs&Services --> Credentials)
     * add SHA-1 in the EXISTING project on that page (there're will be the one from Firebase). THERE'S NO POINT IN CREATING A NEW PROJECT
     * additionally, for iOS one can use: 
     
         `await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);`
-9. *Optional:* to enable **multidex** support
+9b. *Optional:* to enable **multidex** support
     * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
     ```
       buildscript {
