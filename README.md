@@ -19,10 +19,7 @@
   * enable the Android Device Verification API on google cloud console (left menu --> APIs&Services --> Credentials)
   * add SHA-1 in the EXISTING project on that page (there're will be the one from Firebase). THERE'S NO POINT IN CREATING A NEW PROJECT
   * additionally, for iOS one can use: 
-    
-        ```
-        await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);
-        ```
+        ```await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);```
         
 9b. *Optional:* to enable **multidex** support
   * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
