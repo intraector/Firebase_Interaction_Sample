@@ -16,17 +16,16 @@
 8. Add `classpath 'com.google.gms:google-services:4.3.5'` to `/android/build.gradle` dependencies
 
 9a. *Optional*: to remove captcha
-    * enable the Android Device Verification API on google cloud console (left menu --> APIs&Services --> Credentials)
-    * add SHA-1 in the EXISTING project on that page (there're will be the one from Firebase). THERE'S NO POINT IN CREATING A NEW PROJECT
-    * additionally, for iOS one can use: 
+  * enable the Android Device Verification API on google cloud console (left menu --> APIs&Services --> Credentials)
+  * add SHA-1 in the EXISTING project on that page (there're will be the one from Firebase). THERE'S NO POINT IN CREATING A NEW PROJECT
+  * additionally, for iOS one can use: 
     
         ```
         await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);
         ```
         
 9b. *Optional:* to enable **multidex** support
-
-    * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
+  * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
     ```
       buildscript {
       dependencies {
@@ -36,12 +35,12 @@
     }
     ```
     
-    * execute the plugin by adding the following underneath the line apply plugin: `com.android.application`, within the `/android/app/build.gradle` file:
+  * execute the plugin by adding the following underneath the line apply plugin: `com.android.application`, within the `/android/app/build.gradle` file:
     ```
     apply plugin: 'com.google.gms.google-services'
     ```
     
-    * open the `/android/app/build.gradle` file. Under `dependencies` add the multidex module, and enable it within the defaultConfig:
+  * open the `/android/app/build.gradle` file. Under `dependencies` add the multidex module, and enable it within the defaultConfig:
     ```
      android {
             defaultConfig {
