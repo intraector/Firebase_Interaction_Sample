@@ -20,6 +20,7 @@
   * add SHA-1 in the EXISTING project on that page (there're will be the one from Firebase). THERE'S NO POINT IN CREATING A NEW PROJECT
   * additionally, for iOS one can use: 
         ```await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);```
+    DON'T FORGET TO REMOVE IT in release version - it won't work
         
 9b. *Optional:* to enable **multidex** support
   * add the `google-services` plugin as a dependency inside of the android/build.gradle file:
